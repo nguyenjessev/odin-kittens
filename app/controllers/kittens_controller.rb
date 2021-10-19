@@ -4,13 +4,15 @@ class KittensController < ApplicationController
   end
 
   def new
+    @kitten = Kitten.new
   end
 
   def create
+    @kitten = Kitten.new()
   end
 
   def show
-    @article = Article.find(params[:id])
+    @kitten = Kitten.find(params[:id])
   end
 
   def edit
