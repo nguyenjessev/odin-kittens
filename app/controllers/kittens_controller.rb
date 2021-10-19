@@ -8,7 +8,13 @@ class KittensController < ApplicationController
   end
 
   def create
-    @kitten = Kitten.new()
+    @kitten = Kitten.new(kitten_params)
+
+    if @kitten.save
+      redirect_to @kitten
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,3 +30,9 @@ class KittensController < ApplicationController
   def destroy
   end
 end
+
+private
+
+  def kitten_params
+    params.require(:kitten).permit(:age, :cuteness, :softness)
+  end
