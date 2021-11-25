@@ -7,6 +7,7 @@
   <li>Age: <%= @kitten.age %></li>
   <li>Cuteness: <%= @kitten.cuteness %></li>
   <li>Softness: <%= @kitten.softness %></li>
-  <li><%= link_to "Edit This Kitten", edit_kitten_path %></li>
+  <li><%= link_to "Edit Kitten", edit_kitten_path %></li>
+  <li><%= link_to "Delete Kitten", @kitten, method: :delete, data: { confirm: "Are you sure?" } %></li>
   <li><%= link_to "Return to Index", root_path %></li>
 </p>

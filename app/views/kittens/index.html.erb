@@ -3,7 +3,7 @@
 
 <% @kittens.each do |kitten| %>
   <li>
-    <%= link_to kitten.name, kitten %>
+    <%= link_to kitten.name, kitten %> (<%= link_to "Delete Kitten", kitten, method: :delete, data: { confirm: "Are you sure?" } %>)
   </li>
 <% end %>
 
